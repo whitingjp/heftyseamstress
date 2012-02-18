@@ -10,8 +10,12 @@ function load()
 
 function show(result)
 {
-	alert("Data Loaded: " + result);	
-	
-	var p = $('<p>'+result+'</p>');
+	var spl = result.split(' ');
+	var p = $('<p/>');
 	$('body').append(p);
+	for (var item in spl)
+	{
+		var a = $('<a href="'+spl[item]+'">'+spl[item]+' </a>');
+		p.append(a);
+	}
 }
