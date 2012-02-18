@@ -17,7 +17,7 @@ function retrieve(word)
 	{
 		if(result=='failure')
 		{
-			input(result);
+			input(word);
 		} else
 		{			
 			show(result);
@@ -38,12 +38,37 @@ function input(result)
 	form.append(button);
 }
 
+function check_input(input)
+{
+	var spl = input.split(' ');
+	if(spl.length != inputword.length)
+	{
+		return "Not the same number of words as letters.";
+	}
+	for(var i in spl)
+	{
+		if(spl[i][0] != inputword[i])
+		{
+			alert(spl[i][0]+' : '+inputword);
+			return "Not all words start with corresponding letter of word.";
+		}
+	}
+	return "";
+}
+
 function process_input(form)
 {
 	var val = form.input.value;
-	show(val);
-	$.get(storesite+val);
-	$('.inputter').remove();
+	var chk = check_input(val);
+	if(chk=='')
+	{
+		show(val);
+		$.get(storesite+val);
+		$('.inputter').remove();
+	} else
+	{
+		alert(chk);
+	}
 }
 
 function show(result)
