@@ -1,9 +1,10 @@
-//var site = 'http://nottheinternet.com/games/heftyseamstress'
-//var retrieve = site+'/retrieve.php?word='
-//var storesite = site+'/store.php?word=test&phrase='
-var site = 'http://jonathanwhiting.com/jam/uk6/seamstress'
-var retrievesite = site+'/'
+
+var site = 'http://nottheinternet.com/games/heftyseamstress'
+var retrievesite = site+'/retrieve.php?word='
 var storesite = site+'/store.php?word=test&phrase='
+//var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
+//var retrievesite = site+''
+
 var inputword = '';
 
 function load()
