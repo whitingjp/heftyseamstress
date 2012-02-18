@@ -1,8 +1,13 @@
-var site = 'http://jonathanwhiting.com/jam/uk6/seamstress'
+//var site = 'http://nottheinternet.com/games/heftyseamstress'
+//var retrieve = site+'/retrieve.php?word='
+
+var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
+var retrieve = site+''
+
 
 function load()
 {
-	$.get(site+'/test.txt', function(result)
+	$.get(retrieve+'test', function(result)
 	{
 		show(result);
 	});
@@ -15,7 +20,7 @@ function show(result)
 	$('body').append(p);
 	for (var item in spl)
 	{
-		var a = $('<a href="'+spl[item]+'">'+spl[item]+' </a>');
+		var a = $('<a href="'+retrieve+spl[item]+'">'+spl[item]+' </a>');
 		p.append(a);
 	}
 }
