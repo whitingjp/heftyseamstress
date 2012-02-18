@@ -1,0 +1,18 @@
+
+body, html {
+font-family: 'Asap', sans-serif;
+    background: #ededed;
+    /* Mozilla: */
+    background: -moz-linear-gradient(top, #ededed, #bfa99d);
+    /* Chrome, Safari:*/
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#ededed), to(#bfa99d));
+    /* MSIE */
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#ededed', EndColorStr='#bfa99d', GradientType=0);
+
+}
+
+#main {
+	background-color: cfcfcf;
+}
