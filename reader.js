@@ -38,7 +38,7 @@ function input(result)
 	$('.inputter').remove();
 	inputword = result;
 	var p = $('<p/>');
-	$('body').append(p);	
+	$('#main').append(p);	
 	var form = $('<form action="" method="" class="inputter"/>');
 	p.append(form);
 	var label = $('<label for="firstname">'+inputword+':</label>');
@@ -87,7 +87,7 @@ function show(result)
 {
 	var spl = result.split(' ');
 	var p = $('<p/>');
-	$('body').append(p);
+	$('#main').append(p);
 	for (var item in spl)
 	{
 		var a = $('<a href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+' </a>');

@@ -15,4 +15,28 @@ font-family: 'Asap', sans-serif;
 
 #main {
 	background-color: cfcfcf;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:500px;
+}
+
+h1 {
+	text-align:center;
+
+}
+
+input[type="text"] {
+	width: 255px;
+
+}
+
+a {
+	text-decoration:none;
+	color: #222222;
+}
+
+.expanded, a:visited {
+	font-weight:bold;
+	color:#000000;
+
 }
