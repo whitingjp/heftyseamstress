@@ -1,9 +1,13 @@
 
 var site = 'http://nottheinternet.com/games/heftyseamstress'
 var retrievesite = site+'/retrieve.php?word='
-var storesite = site+'/store.php?word=test&phrase='
 //var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
 //var retrievesite = site+''
+
+function storesite(word, phrase)
+{
+	return site+'/store.php?word='+word+'&phrase='+phrase;
+}
 
 var inputword = '';
 
@@ -64,7 +68,7 @@ function process_input(form)
 	if(chk=='')
 	{
 		show(val);
-		$.get(storesite+val);
+		$.get(storesite(inputword,val));
 		$('.inputter').remove();
 	} else
 	{
