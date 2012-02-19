@@ -1,8 +1,8 @@
 
-//var site = 'http://nottheinternet.com/games/heftyseamstress'
-//var retrievesite = site+'/retrieve.php?word='
-var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
-var retrievesite = site+''
+var site = 'http://nottheinternet.com/games/heftyseamstress'
+var retrievesite = site+'/retrieve.php?word='
+//var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
+//var retrievesite = site+''
 
 function storesite(word, phrase)
 {
