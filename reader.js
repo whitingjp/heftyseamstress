@@ -94,15 +94,9 @@ function process_input(form)
 
 function show(result)
 {
-	alert(result);
-	var a_string = '<a href="javascript:void(0)" onclick="retrieve(\'$1\');">$1</a>';
+	//alert(result);
+	var a_string = '<a class="expandable" href="javascript:void(0)" onclick="retrieve(\'$1\');">$1</a>';
 	var linked = result.replace(/([a-zA-Z]+)/g, a_string);	
 	var p = $('<p>'+linked+'</p>');
 	$('#main').append(p);
-	for (var item in spl)
-	{
-		var a = $('<a class="expandable" href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+'</a>');
-		p.append(a);
-		p.append(' ');
-	}
 }
