@@ -18,7 +18,7 @@ function load()
 
 function retrieve(word)
 {
-	$('a').replaceWith(function() {
+	$('a .expandable').replaceWith(function() {
 		var thisText = $(this).text();
 		
 		if(thisText == word)
@@ -97,7 +97,7 @@ function show(result)
 	$('#main').append(p);
 	for (var item in spl)
 	{
-		var a = $('<a href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+'</a>');
+		var a = $('<a class="expandable" href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+'</a>');
 		p.append(a);
 		p.append(' ');
 	}
