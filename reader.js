@@ -13,12 +13,12 @@ var inputword = '';
 
 function load()
 {
-	retrieve('test');
+	retrieve('youths');
 }
 
 function retrieve(word)
 {
-	$('a .expandable').replaceWith(function() {
+	$('a.expandable').replaceWith(function() {
 		var thisText = $(this).text();
 		
 		if(thisText == word)
@@ -44,9 +44,9 @@ function input(result)
 	inputword = result;
 	var p = $('<p/>');
 	$('#main').append(p);	
-	var form = $('<form action="" method="" class="inputter" onsubmit="return false;"/>');
+	var form = $('<form method="" action="" class="inputter" onsubmit="return false;" />');
 	p.append(form);
-	var input =  $('<input type="text" name="input"/>');
+	var input =  $('<input type="text"  name="input"/>');
 	form.append(input);
 	var button = $('<input type="button" name="button" Value="Add" onClick="process_input(this.form)">');
 	form.append(button);
@@ -88,6 +88,7 @@ function process_input(form)
 		var warning = $('<span class="warning">'+chk+'</p>');
 		$('.inputter').append(warning);
 	}
+	return false;
 }
 
 function show(result)
