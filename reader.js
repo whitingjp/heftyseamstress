@@ -44,7 +44,7 @@ function input(result)
 	inputword = result;
 	var p = $('<p/>');
 	$('#main').append(p);	
-	var form = $('<form action="" method="" class="inputter"/>');
+	var form = $('<form action="" method="" class="inputter" onsubmit="return false;"/>');
 	p.append(form);
 	var input =  $('<input type="text" name="input"/>');
 	form.append(input);
