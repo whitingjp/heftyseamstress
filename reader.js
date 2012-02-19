@@ -1,8 +1,8 @@
 
-var site = 'http://nottheinternet.com/games/heftyseamstress'
-var retrievesite = site+'/retrieve.php?word='
-//var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
-//var retrievesite = site+''
+//var site = 'http://nottheinternet.com/games/heftyseamstress'
+//var retrievesite = site+'/retrieve.php?word='
+var site = 'http://jonathanwhiting.com/jam/uk6/seamstress/'
+var retrievesite = site+''
 
 function storesite(word, phrase)
 {
@@ -54,14 +54,14 @@ function input(result)
 
 function check_input(input)
 {
-	var spl = input.split(' ');
+	var spl = input.toLowerCase().split(' ');
 	if(spl.length < inputword.length)
 		return "Less words than letters.";
 	if(spl.length > inputword.length)
 		return "More words than letters.";
 	for(var i in spl)
 	{
-		if(spl[i][0] != inputword[i])
+		if(spl[i][0] != inputword[i].toLowerCase())
 		{
 			return "Words don't match letters.";
 		}
