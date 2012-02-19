@@ -18,6 +18,9 @@ function load()
 
 function retrieve(word)
 {
+	$('a').replaceWith(function() {
+		return $(this).text();
+	});	
 	$.get(retrievesite+word, function(result)
 	{
 		if(result=='failure')
