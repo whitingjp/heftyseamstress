@@ -24,3 +24,19 @@ h1 {
 	text-align:center;
 
 }
+
+input[type="text"] {
+	width: 255px;
+
+}
+
+a {
+	text-decoration:none;
+	color: #222222;
+}
+
+.expanded, a:visited {
+	font-weight:bold;
+	color:#000000;
+
+}
