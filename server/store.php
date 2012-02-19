@@ -2,8 +2,9 @@
 $word = $_REQUEST["word"];
 $phrase = urldecode($_REQUEST["phrase"]);
 
+$word = strtolower($word);
 
-$words_in_phrase = explode(" ", $phrase);
+$words_in_phrase = explode(" ", preg_replace('/[^A-Za-z\s]/' ,"",strtolower($phrase)));
 for ($i = 0; $i < strlen($word); $i++) {
     if ( $words_in_phrase[$i][0] != $word[$i]){
         die("failure__not_cromulent");
