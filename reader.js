@@ -54,14 +54,15 @@ function input(result)
 
 function check_input(input)
 {
-	var spl = input.tolowerCase().split(' ');
-	if(spl.length != inputword.length)
+	var spl = input.toLowerCase().split(' ');
+	var testword = inputword.toLowerCase();
+	if(spl.length != testword.length)
 	{
 		return "Not the same number of words as letters.";
 	}
 	for(var i in spl)
 	{
-		if(spl[i][0] != inputword[i].tolowerCase())
+		if(spl[i][0] != testword[i])
 		{
 			return "Not all words start with corresponding letter of word.";
 		}

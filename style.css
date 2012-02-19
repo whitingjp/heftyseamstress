@@ -45,3 +45,8 @@ a {
 	font-weight:bold;
 	color:#FF8C2D;
 }
+
+.warning {
+	text-align:center;
+	color:#ff2d32;
+}
