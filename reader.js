@@ -19,7 +19,12 @@ function load()
 function retrieve(word)
 {
 	$('a').replaceWith(function() {
-		return $(this).text();
+		var thisText = $(this).text();
+		
+		if(thisText == word)
+			return $('<span class="expanded">'+thisText+'</span>');
+		else
+			return $('<span>'+thisText+'</span>');
 	});	
 	$.get(retrievesite+word, function(result)
 	{
@@ -39,10 +44,8 @@ function input(result)
 	inputword = result;
 	var p = $('<p/>');
 	$('#main').append(p);	
-	var form = $('<form action="" method="" class="inputter"/>');
+	var form = $('<form action="" method="" class="inputter" onsubmit="return false;"/>');
 	p.append(form);
-	var label = $('<label for="firstname">'+inputword+':</label>');
-	form.append(label);
 	var input =  $('<input type="text" name="input"/>');
 	form.append(input);
 	var button = $('<input type="button" name="button" Value="Add" onClick="process_input(this.form)">');
@@ -90,7 +93,8 @@ function show(result)
 	$('#main').append(p);
 	for (var item in spl)
 	{
-		var a = $('<a href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+' </a>');
+		var a = $('<a href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+'</a>');
 		p.append(a);
+		p.append(' ');
 	}
 }

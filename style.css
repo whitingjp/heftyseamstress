@@ -41,8 +41,7 @@ a {
 	color: #437CFF;
 }
 
-.expanded, a:visited {
+.expanded {
 	font-weight:bold;
 	color:#FF8C2D;
-
 }
