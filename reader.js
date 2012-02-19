@@ -32,11 +32,14 @@ function retrieve(word)
 
 function input(result)
 {
+	$('.inputter').remove();
 	inputword = result;
 	var p = $('<p/>');
 	$('body').append(p);	
 	var form = $('<form action="" method="" class="inputter"/>');
 	p.append(form);
+	var label = $('<label for="firstname">'+inputword+':</label>');
+	form.append(label);
 	var input =  $('<input type="text" name="input"/>');
 	form.append(input);
 	var button = $('<input type="button" name="button" Value="Add" onClick="process_input(this.form)">');
@@ -54,7 +57,6 @@ function check_input(input)
 	{
 		if(spl[i][0] != inputword[i])
 		{
-			alert(spl[i][0]+' : '+inputword);
 			return "Not all words start with corresponding letter of word.";
 		}
 	}
@@ -64,6 +66,7 @@ function check_input(input)
 function process_input(form)
 {
 	var val = form.input.value;
+	$('.warning').remove();
 	var chk = check_input(val);
 	if(chk=='')
 	{
@@ -71,8 +74,9 @@ function process_input(form)
 		$.get(storesite(inputword,val));
 		$('.inputter').remove();
 	} else
-	{
-		alert(chk);
+	{		
+		var warning = $('<p class="warning">'+chk+'</p>');
+		$('.inputter').append(warning);
 	}
 }
 
