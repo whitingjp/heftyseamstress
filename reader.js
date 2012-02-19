@@ -54,6 +54,10 @@ function input(result)
 
 function check_input(input)
 {
+	if(input.length == 0)
+		return "Enter a phrase.";		
+	if (!(input.match(/^[a-zA-Z ]+$/)))
+		return "Only letters and spaces."
 	var spl = input.toLowerCase().split(' ');
 	if(spl.length < inputword.length)
 		return "Less words than letters.";
