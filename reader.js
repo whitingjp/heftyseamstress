@@ -55,16 +55,15 @@ function input(result)
 function check_input(input)
 {
 	var spl = input.toLowerCase().split(' ');
-	var testword = inputword.toLowerCase();
-	if(spl.length != testword.length)
-	{
-		return "Not the same number of words as letters.";
-	}
+	if(spl.length < inputword.length)
+		return "Less words than letters.";
+	if(spl.length > inputword.length)
+		return "More words than letters.";
 	for(var i in spl)
 	{
-		if(spl[i][0] != testword[i])
+		if(spl[i][0] != inputword[i].toLowerCase())
 		{
-			return "Not all words start with corresponding letter of word.";
+			return "Words don't match letters.";
 		}
 	}
 	return "";
@@ -82,7 +81,7 @@ function process_input(form)
 		$('.inputter').remove();
 	} else
 	{		
-		var warning = $('<p class="warning">'+chk+'</p>');
+		var warning = $('<span class="warning">'+chk+'</p>');
 		$('.inputter').append(warning);
 	}
 }
