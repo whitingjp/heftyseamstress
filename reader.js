@@ -54,10 +54,11 @@ function input(result)
 
 function check_input(input)
 {
+	input = input.trim();
 	if(input.length == 0)
 		return "Enter a phrase.";		
-	if (!(input.match(/^[a-zA-Z ]+$/)))
-		return "Only letters and spaces."
+	if (!(input.match(/^[a-zA-Z.,!';:? ]+$/)))
+		return "Invalid character."
 	var spl = input.toLowerCase().split(' ');
 	if(spl.length < inputword.length)
 		return "Less words than letters.";
@@ -92,13 +93,9 @@ function process_input(form)
 
 function show(result)
 {
-	var spl = result.split(' ');
-	var p = $('<p/>');
+	alert(result);
+	var a_string = '<a href="javascript:void(0)" onclick="retrieve(\'$1\');">$1</a>';
+	var linked = result.replace(/([a-zA-Z]+)/g, a_string);	
+	var p = $('<p>'+linked+'</p>');
 	$('#main').append(p);
-	for (var item in spl)
-	{
-		var a = $('<a href="javascript:void(0)" onclick="retrieve(\''+spl[item]+'\');">'+spl[item]+'</a>');
-		p.append(a);
-		p.append(' ');
-	}
 }
