@@ -48,6 +48,7 @@ function input(result)
 	p.append(form);
 	var input =  $('<input type="text"  name="input"/>');
 	form.append(input);
+	$(input).keypress(function(e) { if(e.which == 13) process_input(this.form); });
 	var button = $('<input type="button" name="button" Value="Add" onClick="process_input(this.form)">');
 	form.append(button);
 }
